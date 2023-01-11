@@ -17,7 +17,11 @@ I believe compilation is as simple as:
 - `git clone https://github.com/corgeman/robloxia.git`
 - `cd robloxia`
 - `cargo build --release`
+
+
 Inside ./robloxia/target/release should be robloxia.exe, the compiled binary.
+
+
 If your computer's CPU supports AES-NI, then you can confirm the binary uses those instructions with
 Windows:
 - `SET RUSTFLAGS=-Ctarget-feature=+aes,+ssse3`
