@@ -22,10 +22,13 @@ I believe compilation is as simple as:
 Inside ./robloxia/target/release should be robloxia.exe, the compiled binary.
 
 
-If your computer's CPU supports AES-NI, then you can confirm the binary uses those instructions with
+If your computer's CPU supports AES-NI, then you can confirm the binary uses those instructions by doing:
+
 Windows:
 - `SET RUSTFLAGS=-Ctarget-feature=+aes,+ssse3`
 - `cargo build --release`
 - `SET RUSTFLAGS=`
+
+
 Linux:
 - `RUSTFLAGS="-Ctarget-feature=+aes,+ssse3" cargo build --release`
