@@ -37,7 +37,7 @@ fn main() -> io::Result<()>{
         32 => Aes256CbcDec::new(key.into(), &IV.into()).decrypt_padded_b2b_mut::<Pkcs7>(&ciphertext, &mut buf),
         _ => panic!("Incorrect keysize."),
     };
-    let decrypted = Aes128CbcDec::new(key.into(), &IV.into()).decrypt_padded_b2b_mut::<Pkcs7>(&ciphertext, &mut buf);
+    // let decrypted = Aes128CbcDec::new(key.into(), &IV.into()).decrypt_padded_b2b_mut::<Pkcs7>(&ciphertext, &mut buf); // devglan
     if let Ok(_v) = decrypted{
         if let Ok(p) = std::str::from_utf8(decrypted.unwrap()){println!("{}:{}",std::str::from_utf8(key).unwrap().trim_end_matches(char::from(0)),p);}
         // if let Ok(p) = std::str::from_utf8(decrypted.unwrap()){println!("{}",p);}
